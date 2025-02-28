@@ -1,0 +1,85 @@
+.tech-news-container {
+    width: 100%;
+    padding: 150px 0 20px; /* Khoảng cách trên 150px */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .news-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 15px; /* Cách 10px so với hình */
+  }
+  
+  .news-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .news-slider {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    justify-content: center;
+  }
+  
+  .news-item {
+    flex: 0 0 calc(25% - 20px); /* 4 tin trên 1 hàng */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 0 10px;
+  }
+  
+  .news-item img {
+    width: 100%;
+    height: 180px; /* Cố định chiều cao */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Hiển thị con trỏ khi hover */
+  }
+  
+  /* Hiệu ứng khi di chuột vào ảnh */
+  .news-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Bóng đậm hơn khi hover */
+  }
+  
+  .news-item p {
+    font-size: 14px;
+    color: black;
+    margin-top: 5px;
+  }
+  
+  /* Nút điều hướng */
+  .news-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .news-btn.left {
+    left: 10px;
+  }
+  
+  .news-btn.right {
+    right: 10px;
+  }
+  
+  .news-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
