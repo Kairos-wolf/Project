@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
-import BannerSlider from './BannerSlider';
-import Special from './components/Special';
-import ProductList from './components/ProductList'
-import Footer from './components/Footer';
+import Header from './pages/Home/Header';
+import BannerSlider from './pages/Home/BannerSlider';
+import Special from './pages/Home/Special';
+import ProductList from './pages/Home/ProductList'
+import Footer from './pages/Home/Footer';
 
 function App() {
   return (
