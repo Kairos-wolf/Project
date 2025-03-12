@@ -8,6 +8,7 @@ import ProductList from "./pages/Home/ProductList";
 import Footer from "./pages/Home/Footer";
 import FlashSale from "./pages/FlashSale/FlashSale"; // Import FlashSale
 import ProductDetail from "./pages/Detail/ProductDetail"; // Import trang chi tiết sản phẩm
+import Auth from "./pages/Auth/Auth"; 
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </>} />
         <Route path="/flash-sale" element={<FlashSale />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       <Footer />
     </Router>
