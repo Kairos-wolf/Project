@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Header.css"; // Đảm bảo file CSS được liên kết đúng
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <header className="header">
       {/* Logo */}
@@ -11,6 +12,7 @@ const Header = () => {
         <img
           src="https://graphicsfamily.com/wp-content/uploads/edd/2020/10/Free-Eagle-Embroidered-Logo-Mascot.jpg"
           alt="Logo"
+          onClick={() => navigate("/")}
         />
       </div>
 
@@ -60,7 +62,7 @@ const Header = () => {
 
       {/* Tài khoản & Giỏ hàng */}
       <div className="account-cart">
-        <button className="account-button">&#128100;</button>
+        <button className="account-button" onClick={() => navigate("/auth")}>&#128100;</button>
         <button className="cart-button">Giỏ hàng</button>
       </div>
     </header>
