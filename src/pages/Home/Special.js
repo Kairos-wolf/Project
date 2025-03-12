@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Special.css";
 
 const products = [
@@ -42,6 +43,7 @@ const products = [
 
 const FlashSale = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const navigate = useNavigate(); // Hook điều hướng
 
   const handleNext = () => {
     if (startIndex + 1 < products.length) {
@@ -55,6 +57,10 @@ const FlashSale = () => {
     }
   };
 
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`); // Điều hướng đến trang chi tiết sản phẩm
+  };
+
   return (
     <div className="container py-5 position-relative">
       <h2 className="text-center text-white bg-danger py-3 rounded">
@@ -66,11 +72,14 @@ const FlashSale = () => {
         </button>
         <div className="row flex-nowrap overflow-hidden w-100 slider-container">
           {products.slice(startIndex, startIndex + 4).map((product) => (
-            <div className="col-md-3 flex-shrink-0 text-center" key={product.id}>
+            <div 
+              className="col-md-3 flex-shrink-0 text-center" 
+              key={product.id} 
+              onClick={() => handleProductClick(product.id)} // Gọi hàm điều hướng khi click vào
+              style={{ cursor: "pointer" }} // Hiển thị con trỏ chỉ tay để nhận diện có thể click
+            >
               <div className="card shadow-sm p-3 mb-4 bg-white rounded">
-                <a href={"#"} target="_parent" rel="noopener noreferrer">
-                  <img src={product.image} className="card-img-top" alt={product.name} />
-                </a>
+                <img src={product.image} className="card-img-top" alt={product.name} />
                 <div className="card-body">
                   <h5 className="card-title font-weight-bold">{product.name}</h5>
                   <p className="text-muted">{product.specs}</p>
